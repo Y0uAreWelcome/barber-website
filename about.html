@@ -43,21 +43,6 @@ section#gallery h2 { text-align: center; font-size:2.5em; margin-bottom:20px; }
 .swiper { width: 90%; max-width:1000px; height:400px; margin: 0 auto 50px auto; }
 .swiper-slide img { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; }
 
-/* CONTACT */
-section#contact h2 { text-align: center; margin-bottom:20px; }
-.contact-info p { margin: 10px 0; font-size: 1.2em; }
-.contact-info a { color: gold; text-decoration: underline; transition: color 0.3s; }
-.contact-info a:hover { color: white; }
-
-/* Newsletter */
-form { margin-top: 20px; text-align:center; }
-form input[type=email] { padding: 10px; border-radius:5px; border:none; width:250px; max-width:80%; }
-form button { padding:10px 20px; border-radius:5px; background:gold; border:none; color:black; font-weight:bold; cursor:pointer; }
-form button:hover { background:white; color:black; }
-
-/* Instagram feed */
-#instagram h2 { text-align: center; margin-bottom: 20px; }
-
 /* Responsive */
 @media(max-width:768px){
     .hero h1 { font-size: 2.5em; }
@@ -104,38 +89,9 @@ form button:hover { background:white; color:black; }
 </div>
 </section>
 
-<!-- CONTACT / MAP / Newsletter -->
-<section id="contact">
-<h2>Contact</h2>
-<div class="contact-info">
-<p>Email: your@email.com</p>
-<p>Phone: (123) 456-7890</p>
-<p>
-<a href="https://www.google.com/maps/place/1528+N+Main+St+Ste+104,+Walnut+Creek,+CA+94596" target="_blank">
-Address: 1528 North Main Street, Ste 104, Walnut Creek, CA 94596
-</a>
-</p>
-
-<!-- Embedded Google Map with exact pin -->
-<iframe
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.123456789!2d-122.062!3d37.905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f!2s1528+N+Main+St!5e0!3m2!1sen!2sus!4v0000000000000"
-  width="100%" height="400" style="border:0; margin-top:10px;" allowfullscreen="" loading="lazy">
-</iframe>
-
-<!-- Newsletter Signup -->
-<p style="text-align:center; margin-top:20px;">Subscribe for news, promos, and deals:</p>
-<form action="https://YOUR_MAILCHIMP_URL" method="post" target="_blank">
-  <input type="email" name="EMAIL" placeholder="Enter your email" required>
-  <button type="submit">Subscribe</button>
-</form>
-</div>
-</section>
-
-<!-- Instagram Feed -->
-<section id="instagram">
-<h2>Instagram</h2>
-<!-- Replace the URL with your actual SnapWidget / Instagram embed code -->
-<iframe src="https://snapwidget.com/embed/000000" class="instagram-feed" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%; height:500px; margin-top:20px;"></iframe>
+<!-- ABOUT ME TEXT -->
+<section id="about-text" style="padding:50px; text-align:center;">
+<p>Hi, I’m Sajed — professional barber with 10+ years of experience providing clean, sharp cuts. I specialize in fades, beard trims, and precision styles. My goal is to make every client look and feel their best.</p>
 </section>
 
 <script>

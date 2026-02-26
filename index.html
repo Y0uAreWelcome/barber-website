@@ -1,45 +1,141 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Precision Cuts</title>
-  <style>
-    body {
-      font-family: Arial;
-      text-align: center;
-      background-color: #111;
-      color: white;
-    }
-    h1 {
-      font-size: 50px;
-      margin-top: 50px;
-    }
-    .button {
-      background-color: gold;
-      color: black;
-      padding: 15px 30px;
-      text-decoration: none;
-      font-size: 20px;
-      border-radius: 5px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Precision Cuts Barber</title>
+
+<!-- Styles -->
+<style>
+/* Reset & Global */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, sans-serif; scroll-behavior: smooth; background: #111; color: white; }
+
+/* NAVBAR */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.9);
+    padding: 15px 0;
+    text-align: center;
+    z-index: 100;
+}
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+nav a:hover { color: gold; }
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url("https://images.unsplash.com/photo-1585747860715-2ba37e788b70") center/cover no-repeat;
+}
+.hero h1 { font-size: 4em; margin-bottom: 10px; }
+.hero p { font-size: 1.5em; margin-bottom: 20px; }
+.hero .button { background: gold; color: black; padding: 15px 30px; border-radius: 5px; font-weight: bold; text-decoration: none; }
+
+/* SECTIONS */
+section { padding: 100px 20px; text-align: center; }
+section h2 { font-size: 2.5em; margin-bottom: 20px; }
+
+/* GALLERY */
+.gallery { display: flex; flex-wrap: wrap; justify-content: center; }
+.gallery img { width: 30%; margin: 10px; border-radius: 10px; transition: transform 0.3s; }
+.gallery img:hover { transform: scale(1.05); }
+
+/* CONTACT */
+.contact-info p { margin: 10px 0; font-size: 1.2em; }
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .hero h1 { font-size: 2.5em; }
+    .hero p { font-size: 1em; }
+    .gallery img { width: 45%; }
+}
+@media(max-width:480px){
+    .gallery img { width: 90%; }
+    nav a { display: block; margin: 10px 0; }
+}
+</style>
+
+<!-- Scripts for smooth scroll animation (optional for older browsers) -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll("nav a");
+    links.forEach(link => {
+        link.addEventListener("click", function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute("href")).scrollIntoView({ behavior: "smooth" });
+        });
+    });
+});
+</script>
+
 </head>
 <body>
 
+<!-- NAVBAR -->
+<nav>
+<a href="#home">Home</a>
+<a href="#book">Book</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+<a href="#gift">Gift Cards</a>
+<a href="#about">About Me</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
 <h1>Precision Cuts</h1>
-<p>Clean fades. Sharp lines.</p>
-
-<h2>Services</h2>
-<p>Haircut - $40</p>
-<p>Beard Trim - $20</p>
-<p>Haircut + Beard - $55</p>
-
-<br><br>
-
+<p>Clean Fades. Sharp Lines. Premium Service.</p>
 <a class="button" href="https://calendly.com/sajeddazine" target="_blank">Book Appointment</a>
-  
-<br><br>
+</section>
 
-<p>A valid card is required to book. No-shows will be charged.</p>
+<!-- BOOK -->
+<section id="book">
+<h2>Book Your Appointment</h2>
+<p>Schedule your haircut easily online:</p>
+<a class="button" href="https://calendly.com/sajeddazine" target="_blank">Book Now</a>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+<h2>Gallery</h2>
+<img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a" alt="Haircut">
+<img src="https://images.unsplash.com/photo-1621607512022-6aecc4fed814" alt="Fade">
+<img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438" alt="Beard Trim">
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact</h2>
+<div class="contact-info">
+<p>Email: your@email.com</p>
+<p>Phone: (123) 456-7890</p>
+</div>
+</section>
+
+<!-- GIFT CARDS -->
+<section id="gift">
+<h2>Gift Cards</h2>
+<p>Perfect for any occasion! Contact us to purchase.</p>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>About Me</h2>
+<p>Hi, I’m Sajed — professional barber with 10+ years of experience providing clean, sharp cuts.</p>
+</section>
 
 </body>
 </html>

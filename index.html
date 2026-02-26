@@ -5,11 +5,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Precision Cuts Barber</title>
 
+<!-- SEO Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Barbershop",
+  "name": "Precision Cuts Barber",
+  "image": "https://images.unsplash.com/photo-1585747860715-2ba37e788b70",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1528 North Main Street, Ste 104",
+    "addressLocality": "Walnut Creek",
+    "addressRegion": "CA",
+    "postalCode": "94596",
+    "addressCountry": "US"
+  },
+  "telephone": "(123) 456-7890",
+  "url": "https://yourbarbershop.homes"
+}
+</script>
+
 <!-- Styles -->
 <style>
-/* Reset & Global */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: Arial, sans-serif; scroll-behavior: smooth; background: #111; color: white; }
+* { box-sizing: border-box; margin:0; padding:0; }
+body { font-family: Arial, sans-serif; scroll-behavior: smooth; background:#111; color:white; }
 
 /* NAVBAR */
 nav {
@@ -21,13 +40,7 @@ nav {
     text-align: center;
     z-index: 100;
 }
-nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    transition: color 0.3s;
-}
+nav a { margin: 0 15px; text-decoration: none; color: white; font-weight: bold; transition: color 0.3s; }
 nav a:hover { color: gold; }
 
 /* HERO */
@@ -68,7 +81,7 @@ section h2 { font-size: 2.5em; margin-bottom: 20px; }
 }
 </style>
 
-<!-- Scripts for smooth scroll animation (optional for older browsers) -->
+<!-- Scripts for smooth scroll -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     const links = document.querySelectorAll("nav a");
@@ -122,7 +135,8 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="contact-info">
 <p>Email: your@email.com</p>
 <p>Phone: (123) 456-7890</p>
-<p>Address: 1528 North Main Street, Ste 104, Walnut Creek, CA 94596</p>
+<p>Address: <a href="https://goo.gl/maps/2tV9MZk2y8H2" target="_blank" style="color:white; text-decoration:underline;">
+1528 North Main Street, Ste 104, Walnut Creek, CA 94596</a></p>
 </div>
 </section>
 

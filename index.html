@@ -35,29 +35,30 @@ nav a:hover { color: gold; }
     background: url("https://images.unsplash.com/photo-1585747860715-2ba37e788b70") center/cover no-repeat;
     background-size: cover;
 }
-.hero h1 { font-size: 4em; margin-bottom: 10px; animation: fadeInDown 2s; }
-.hero p { font-size: 1.5em; margin-bottom: 20px; animation: fadeIn 3s; }
+.hero h1 { font-size: 4em; margin-bottom: 10px; }
+.hero p { font-size: 1.5em; margin-bottom: 20px; }
 .hero .button { background: gold; color: black; padding: 15px 30px; border-radius: 5px; font-weight: bold; text-decoration: none; transition: transform 0.3s; }
 .hero .button:hover { transform: scale(1.05); }
 
-/* Animations */
-@keyframes fadeInDown { from {opacity:0; transform:translateY(-20px);} to {opacity:1; transform:translateY(0);} }
-@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
-
-/* SWIPER GALLERY */
-.swiper { width: 90%; max-width:1000px; height:400px; margin: 50px auto; }
+/* GALLERY */
+section#gallery h2 { text-align: center; font-size:2.5em; margin-bottom:20px; }
+.swiper { width: 90%; max-width:1000px; height:400px; margin: 0 auto 50px auto; }
 .swiper-slide img { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; }
 
 /* CONTACT */
+section#contact h2 { text-align: center; margin-bottom:20px; }
 .contact-info p { margin: 10px 0; font-size: 1.2em; }
 .contact-info a { color: gold; text-decoration: underline; transition: color 0.3s; }
 .contact-info a:hover { color: white; }
 
 /* Newsletter */
-form { margin-top: 20px; }
+form { margin-top: 20px; text-align:center; }
 form input[type=email] { padding: 10px; border-radius:5px; border:none; width:250px; max-width:80%; }
 form button { padding:10px 20px; border-radius:5px; background:gold; border:none; color:black; font-weight:bold; cursor:pointer; }
 form button:hover { background:white; color:black; }
+
+/* Instagram feed */
+#instagram h2 { text-align: center; margin-bottom: 20px; }
 
 /* Responsive */
 @media(max-width:768px){
@@ -73,16 +74,15 @@ form button:hover { background:white; color:black; }
 
 <!-- Swiper JS -->
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
 </head>
 <body>
 
 <!-- NAVBAR -->
 <nav>
-<a href="index.html#home">Home</a>
-<a href="index.html#gallery">Gallery</a>
-<a href="about.html">About Me</a>
-<a href="index.html#contact">Contact</a>
+<a href="#home">Home</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+<a href="#about">About Me</a>
 </nav>
 
 <!-- HERO -->
@@ -100,6 +100,8 @@ form button:hover { background:white; color:black; }
     <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a" alt="Haircut"></div>
     <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1621607512022-6aecc4fed814" alt="Fade"></div>
     <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438" alt="Beard Trim"></div>
+    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e" alt="New Style"></div>
+    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1596912101241-67f2e2d0fce2" alt="Another Cut"></div>
   </div>
   <!-- Navigation -->
   <div class="swiper-button-next"></div>
@@ -120,17 +122,14 @@ Address: 1528 North Main Street, Ste 104, Walnut Creek, CA 94596
 </a>
 </p>
 
-<!-- Embedded Google Map -->
+<!-- Embedded Google Map with exact pin -->
 <iframe
   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.123456789!2d-122.062!3d37.905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f!2s1528+N+Main+St!5e0!3m2!1sen!2sus!4v0000000000000"
-  width="100%"
-  height="400"
-  style="border:0; margin-top:10px;"
-  allowfullscreen=""
-  loading="lazy">
+  width="100%" height="400" style="border:0; margin-top:10px;" allowfullscreen="" loading="lazy">
 </iframe>
 
 <!-- Newsletter Signup -->
+<p style="text-align:center; margin-top:20px;">Subscribe for news, promos, and deals:</p>
 <form action="https://YOUR_MAILCHIMP_URL" method="post" target="_blank">
   <input type="email" name="EMAIL" placeholder="Enter your email" required>
   <button type="submit">Subscribe</button>
@@ -140,8 +139,15 @@ Address: 1528 North Main Street, Ste 104, Walnut Creek, CA 94596
 
 <!-- Instagram Feed -->
 <section id="instagram">
-<h2>Follow Us on Instagram</h2>
+<h2>Instagram</h2>
+<!-- Replace the URL with your actual SnapWidget / Instagram embed code -->
 <iframe src="https://snapwidget.com/embed/000000" class="instagram-feed" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%; height:500px; margin-top:20px;"></iframe>
+</section>
+
+<!-- ABOUT ME -->
+<section id="about">
+<h2>About Me</h2>
+<p>Hi, I’m Sajed — professional barber with 10+ years of experience providing clean, sharp cuts.</p>
 </section>
 
 <!-- Swiper Initialization -->

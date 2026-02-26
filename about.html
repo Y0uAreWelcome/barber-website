@@ -4,22 +4,149 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Me - Precision Cuts Barber</title>
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <style>
-body { font-family: Arial, sans-serif; background:#111; color:white; padding:50px; }
-a { color: gold; text-decoration: underline; }
-a:hover { color: white; }
+* { box-sizing: border-box; margin:0; padding:0; }
+body { font-family: Arial, sans-serif; scroll-behavior: smooth; background:#111; color:white; }
+
+/* NAVBAR */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.9);
+    padding: 15px 0;
+    text-align: center;
+    z-index: 100;
+}
+nav a { margin: 0 15px; text-decoration: none; color: white; font-weight: bold; transition: color 0.3s; }
+nav a:hover { color: gold; }
+
+/* HERO */
+.hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url("https://images.unsplash.com/photo-1607746882042-944635dfe10e") center/cover no-repeat;
+    background-size: cover;
+}
+.hero h1 { font-size: 4em; margin-bottom: 10px; }
+.hero p { font-size: 1.5em; margin-bottom: 20px; }
+
+/* SLIDING GALLERY */
+section#gallery h2 { text-align: center; font-size:2.5em; margin-bottom:20px; }
+.swiper { width: 90%; max-width:1000px; height:400px; margin: 0 auto 50px auto; }
+.swiper-slide img { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; }
+
+/* CONTACT */
+section#contact h2 { text-align: center; margin-bottom:20px; }
+.contact-info p { margin: 10px 0; font-size: 1.2em; }
+.contact-info a { color: gold; text-decoration: underline; transition: color 0.3s; }
+.contact-info a:hover { color: white; }
+
+/* Newsletter */
+form { margin-top: 20px; text-align:center; }
+form input[type=email] { padding: 10px; border-radius:5px; border:none; width:250px; max-width:80%; }
+form button { padding:10px 20px; border-radius:5px; background:gold; border:none; color:black; font-weight:bold; cursor:pointer; }
+form button:hover { background:white; color:black; }
+
+/* Instagram feed */
+#instagram h2 { text-align: center; margin-bottom: 20px; }
+
+/* Responsive */
+@media(max-width:768px){
+    .hero h1 { font-size: 2.5em; }
+    .hero p { font-size: 1em; }
+    .swiper { height:300px; }
+}
+@media(max-width:480px){
+    nav a { display: block; margin: 10px 0; }
+    .swiper { height:200px; }
+}
 </style>
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
 <body>
+
+<!-- NAVBAR -->
 <nav>
-<a href="index.html">Home</a>
+<a href="index.html#home">Home</a>
 <a href="index.html#gallery">Gallery</a>
+<a href="about.html#hero">About Me</a>
 <a href="index.html#contact">Contact</a>
 </nav>
 
+<!-- HERO -->
+<section class="hero" id="hero">
 <h1>About Me</h1>
-<p>Hi, I’m Sajed — professional barber with 10+ years of experience providing clean, sharp cuts. I specialize in fades, beard trims, and precision styles. My goal is to make every client look and feel their best.</p>
-<p>Location: 1528 North Main Street, Ste 104, Walnut Creek, CA 94596</p>
-<p>Book your appointment <a href="https://calendly.com/sajeddazine" target="_blank">here</a>.</p>
+<p>Learn more about Sajed — Your Professional Barber</p>
+</section>
+
+<!-- SLIDING GALLERY -->
+<section id="gallery">
+<h2>Gallery</h2>
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1614287252440-1b9a8f90d5f5" alt="About Photo 1"></div>
+    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1614287252467-7fa5e37b98e0" alt="About Photo 2"></div>
+    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1614287252475-2c9b1e6b9a7b" alt="About Photo 3"></div>
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-pagination"></div>
+</div>
+</section>
+
+<!-- CONTACT / MAP / Newsletter -->
+<section id="contact">
+<h2>Contact</h2>
+<div class="contact-info">
+<p>Email: your@email.com</p>
+<p>Phone: (123) 456-7890</p>
+<p>
+<a href="https://www.google.com/maps/place/1528+N+Main+St+Ste+104,+Walnut+Creek,+CA+94596" target="_blank">
+Address: 1528 North Main Street, Ste 104, Walnut Creek, CA 94596
+</a>
+</p>
+
+<!-- Embedded Google Map with exact pin -->
+<iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.123456789!2d-122.062!3d37.905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f!2s1528+N+Main+St!5e0!3m2!1sen!2sus!4v0000000000000"
+  width="100%" height="400" style="border:0; margin-top:10px;" allowfullscreen="" loading="lazy">
+</iframe>
+
+<!-- Newsletter Signup -->
+<p style="text-align:center; margin-top:20px;">Subscribe for news, promos, and deals:</p>
+<form action="https://YOUR_MAILCHIMP_URL" method="post" target="_blank">
+  <input type="email" name="EMAIL" placeholder="Enter your email" required>
+  <button type="submit">Subscribe</button>
+</form>
+</div>
+</section>
+
+<!-- Instagram Feed -->
+<section id="instagram">
+<h2>Instagram</h2>
+<!-- Replace the URL with your actual SnapWidget / Instagram embed code -->
+<iframe src="https://snapwidget.com/embed/000000" class="instagram-feed" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%; height:500px; margin-top:20px;"></iframe>
+</section>
+
+<script>
+// Swiper initialization
+var swiper = new Swiper('.swiper', {
+  loop: true,
+  autoplay: { delay: 3000 },
+  pagination: { el: '.swiper-pagination', clickable:true },
+  navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+});
+</script>
+
 </body>
 </html>

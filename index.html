@@ -84,77 +84,103 @@ form button { padding:10px 20px; background:gold; border:none; font-weight:bold;
 <a class="button" href="https://calendly.com/sajeddazine" target="_blank">Book Appointment</a>
 </section>
 
-<section id="gallery">
-<h2>Gallery</h2>
-<div class="swiper">
-<div class="swiper-wrapper">
-<div class="swiper-slide"><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a"></div>
-<div class="swiper-slide"><img src="https://images.unsplash.com/photo-1621607512022-6aecc4fed814"></div>
-<div class="swiper-slide"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438"></div>
-<div class="swiper-slide"><img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e"></div>
-<div class="swiper-slide"><img src="https://images.unsplash.com/photo-1596912101241-67f2e2d0fce2"></div>
-</div>
-<div class="swiper-button-next"></div>
-<div class="swiper-button-prev"></div>
-<div class="swiper-pagination"></div>
-</div>
-</section>
-
-<section id="contact">
-<h2 style="text-align:center;">Contact</h2>
-<div class="contact-info">
-
-<p>Email: your@email.com</p>
-<p>Phone: (123) 456-7890</p>
-
-<p>
-<a href="https://maps.google.com/?q=37.90176,-122.061923" target="_blank">
-Figurati Barber Studio  
-1528 N Main St UNIT 104, Walnut Creek, CA
-</a>
-</p>
-
-<div id="map"></div>
-
-<p style="margin-top:20px;">Subscribe for news, promos, and deals:</p>
-
-<form>
-<input type="email" placeholder="Enter your email" required>
-<button type="submit">Subscribe</button>
-</form>
-
-</div>
-</section>
-
-<script>
-var swiper = new Swiper('.swiper', {
-loop:true,
-autoplay:{delay:3000},
-pagination:{el:'.swiper-pagination', clickable:true},
-navigation:{nextEl:'.swiper-button-next', prevEl:'.swiper-button-prev'}
-});
-
-function initMap() {
-const location = { lat: 37.90176, lng: -122.061923 };
-
-const map = new google.maps.Map(document.getElementById("map"), {
-zoom: 18,
-center: location,
-mapTypeId: "roadmap"
-});
-
-const marker = new google.maps.Marker({
-position: location,
-map: map,
-title: "Figurati Barber Studio"
-});
-}
-</script>
-
-<!-- REPLACE WITH YOUR API KEY -->
-<script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6amfkc6AaS9xUrrIgKqP1-w3Rw13pdyA&callback=initMap">
-</script>
-
-</body>
-</html>
+diff --git a/index.html b/index.html
+index 5976ba6b078c4b82038218346b5eefa163346c24..16fdda8c4fae0ca77477124dce96d73b8bbf229b 100644
+--- a/index.html
++++ b/index.html
+@@ -86,75 +86,90 @@ form button { padding:10px 20px; background:gold; border:none; font-weight:bold;
+ 
+ <section id="gallery">
+ <h2>Gallery</h2>
+ <div class="swiper">
+ <div class="swiper-wrapper">
+ <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a"></div>
+ <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1621607512022-6aecc4fed814"></div>
+ <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438"></div>
+ <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e"></div>
+ <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1596912101241-67f2e2d0fce2"></div>
+ </div>
+ <div class="swiper-button-next"></div>
+ <div class="swiper-button-prev"></div>
+ <div class="swiper-pagination"></div>
+ </div>
+ </section>
+ 
+ <section id="contact">
+ <h2 style="text-align:center;">Contact</h2>
+ <div class="contact-info">
+ 
+ <p>Email: your@email.com</p>
+ <p>Phone: (123) 456-7890</p>
+ 
+ <p>
+-<a href="https://maps.google.com/?q=37.90176,-122.061923" target="_blank">
++<a href="https://maps.google.com/?q=1528+N+Main+St+UNIT+104,+Walnut+Creek,+CA" target="_blank">
+ Figurati Barber Studio  
+ 1528 N Main St UNIT 104, Walnut Creek, CA
+ </a>
+ </p>
+ 
+ <div id="map"></div>
+ 
+ <p style="margin-top:20px;">Subscribe for news, promos, and deals:</p>
+ 
+ <form>
+ <input type="email" placeholder="Enter your email" required>
+ <button type="submit">Subscribe</button>
+ </form>
+ 
+ </div>
+ </section>
+ 
+ <script>
+ var swiper = new Swiper('.swiper', {
+ loop:true,
+ autoplay:{delay:3000},
+ pagination:{el:'.swiper-pagination', clickable:true},
+ navigation:{nextEl:'.swiper-button-next', prevEl:'.swiper-button-prev'}
+ });
+ 
+ function initMap() {
+-const location = { lat: 37.90176, lng: -122.061923 };
++const address = "1528 N Main St UNIT 104, Walnut Creek, CA";
++const fallbackLocation = { lat: 37.90176, lng: -122.061923 };
+ 
+ const map = new google.maps.Map(document.getElementById("map"), {
+ zoom: 18,
+-center: location,
++center: fallbackLocation,
+ mapTypeId: "roadmap"
+ });
+ 
+-const marker = new google.maps.Marker({
+-position: location,
++const geocoder = new google.maps.Geocoder();
++
++geocoder.geocode({ address: address }, function(results, status) {
++if (status === "OK" && results[0]) {
++map.setCenter(results[0].geometry.location);
++
++new google.maps.Marker({
++position: results[0].geometry.location,
+ map: map,
+ title: "Figurati Barber Studio"
+ });
++} else {
++new google.maps.Marker({
++position: fallbackLocation,
++map: map,
++title: "Figurati Barber Studio"
++});
++}
++});
+ }
+ </script>
+ 
+ <!-- REPLACE WITH YOUR API KEY -->
+ <script async defer
+ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6amfkc6AaS9xUrrIgKqP1-w3Rw13pdyA&callback=initMap">
+ </script>
+ 
+ </body>
+ </html>

@@ -1,159 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Precision Cuts Barber</title>
-
-<!-- Swiper CSS -->
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
-<style>
-* { box-sizing: border-box; margin:0; padding:0; }
-body { font-family: Arial, sans-serif; background:#111; color:white; scroll-behavior:smooth; }
-
-/* NAVBAR */
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(0,0,0,0.9);
-    padding: 15px 0;
-    text-align: center;
-    z-index: 100;
-}
-nav a { margin:0 15px; text-decoration:none; color:white; font-weight:bold; transition:color 0.3s; }
-nav a:hover { color: gold; }
-
-/* HERO */
-.hero {
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    background:url("https://images.unsplash.com/photo-1585747860715-2ba37e788b70") center/cover no-repeat;
-    background-size:cover;
-}
-.hero h1 { font-size:4em; margin-bottom:10px; }
-.hero p { font-size:1.5em; margin-bottom:20px; }
-.hero .button {
-    background:gold; color:black; padding:15px 30px; border-radius:5px; font-weight:bold; text-decoration:none;
-    transition: transform 0.3s;
-}
-.hero .button:hover { transform:scale(1.05); }
-
-/* GALLERY */
-section#gallery h2 { text-align:center; font-size:2.5em; margin-bottom:20px; }
-.swiper { width:90%; max-width:1000px; height:400px; margin:0 auto 50px auto; }
-.swiper-slide img { width:100%; height:100%; object-fit:cover; border-radius:10px; }
-
-/* CONTACT */
-section#contact h2 { text-align:center; margin-bottom:20px; }
-.contact-info p { margin:10px 0; font-size:1.2em; }
-.contact-info a { color: gold; text-decoration:underline; transition:color 0.3s; }
-.contact-info a:hover { color:white; }
-
-/* Newsletter */
-form { margin-top:20px; text-align:center; }
-form input[type=email] { padding:10px; border-radius:5px; border:none; width:250px; max-width:80%; }
-form button { padding:10px 20px; border-radius:5px; background:gold; border:none; color:black; font-weight:bold; cursor:pointer; }
-form button:hover { background:white; color:black; }
-
-/* Instagram placeholder */
-#instagram iframe { width:100%; height:500px; border:none; overflow:hidden; margin-top:20px; }
-
-/* Responsive */
-@media(max-width:768px){
-    .hero h1 { font-size:2.5em; }
-    .hero p { font-size:1em; }
-    .swiper { height:300px; }
-}
-@media(max-width:480px){
-    nav a { display:block; margin:10px 0; }
-    .swiper { height:200px; }
-}
-</style>
-
-<!-- Swiper JS -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-</head>
-<body>
-
-<!-- NAVBAR -->
-<nav>
-<a href="#home">Home</a>
-<a href="#gallery">Gallery</a>
-<a href="#contact">Contact</a>
-<a href="about.html#hero">About Me</a>
-</nav>
-
-<!-- HERO -->
-<section class="hero" id="home">
-<h1>Precision Cuts</h1>
-<p>Clean Fades. Sharp Lines. Premium Service.</p>
-<a class="button" href="https://calendly.com/sajeddazine" target="_blank">Book Appointment</a>
-</section>
-
-<!-- SLIDING GALLERY -->
-<section id="gallery">
-<h2>Gallery</h2>
-<div class="swiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a" alt="Haircut"></div>
-    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1621607512022-6aecc4fed814" alt="Fade"></div>
-    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438" alt="Beard Trim"></div>
-    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e" alt="New Style"></div>
-    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1596912101241-67f2e2d0fce2" alt="Another Cut"></div>
-  </div>
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-pagination"></div>
-</div>
-</section>
-
-<!-- CONTACT / MAP / Newsletter -->
-<section id="contact">
-<h2>Contact</h2>
-<div class="contact-info">
-<p>Email: your@email.com</p>
-<p>Phone: (123) 456-7890</p>
-<p>
-<a href="https://goo.gl/maps/2tV9MZk2y8H2" target="_blank">
-1528 N Main St UNIT 104, Walnut Creek, CA 94596
-</a>
-</p>
-
-<!-- Google Map: Exact pin on Figurati Barber Studio -->
-<iframe 
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.103187583047!2d-122.05996758468141!3d37.90544187931881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fc5b1f0d7ab2b%3A0x1a4efc3a0d4d7a5d!2sFigurati%20Barber%20Studio!5e0!3m2!1sen!2sus!4v1708901234567" 
-  width="100%" height="400" style="border:0; margin-top:10px;" allowfullscreen="" loading="lazy">
-</iframe>
-
-<!-- Newsletter -->
-<p style="text-align:center; margin-top:20px;">Subscribe for news, promos, and deals:</p>
-<form action="https://YOUR_MAILCHIMP_URL" method="post" target="_blank">
-  <input type="email" name="EMAIL" placeholder="Enter your email" required>
-  <button type="submit">Subscribe</button>
-</form>
-</div>
-</section>
-
-<!-- Instagram Placeholder -->
-<section id="instagram">
-<iframe src="https://snapwidget.com/embed/000000" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
-</section>
+<!-- Google Map with Exact Pin for Figurati Barber Studio -->
+<div id="map" style="width:100%;height:400px;margin-top:10px;"></div>
 
 <script>
-// Swiper initialization
-var swiper = new Swiper('.swiper', {
-  loop:true,
-  autoplay:{delay:3000},
-  pagination:{el:'.swiper-pagination', clickable:true},
-  navigation:{nextEl:'.swiper-button-next', prevEl:'.swiper-button-prev'}
-});
+function initMap() {
+
+  const figurati = {
+    lat: 37.90544,
+    lng: -122.05997
+  };
+
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 17,
+    center: figurati,
+    mapTypeControl: false,
+    streetViewControl: false,
+    fullscreenControl: true
+  });
+
+  const marker = new google.maps.Marker({
+    position: figurati,
+    map: map,
+    title: "Figurati Barber Studio"
+  });
+
+  const infoWindow = new google.maps.InfoWindow({
+    content: `
+      <strong>Figurati Barber Studio</strong><br>
+      1528 N Main St UNIT 104<br>
+      Walnut Creek, CA 94596
+    `
+  });
+
+  marker.addListener("click", () => {
+    infoWindow.open(map, marker);
+  });
+
+}
 </script>
 
-</body>
-</html>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6amfkc6AaS9xUrrIgKqP1-w3Rw13pdyA&callback=initMap">
+</script>

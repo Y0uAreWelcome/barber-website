@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Checkout</title>
+<script src="https://js.stripe.com/v3/"></script>
+</head>
+<body style="background:#111; color:white; text-align:center; font-family:Arial;">
+
+<h1>Secure Checkout</h1>
+<button onclick="pay()">Pay Now</button>
+
+<script>
+const stripe = Stripe("YOUR_NEW_PUBLISHABLE_KEY");
+
+function pay(){
+fetch("https://YOUR-SERVER/create-checkout-session")
+.then(res => res.json())
+.then(data => stripe.redirectToCheckout({ sessionId: data.id }));
+}
+</script>
+
+</body>
+</html>

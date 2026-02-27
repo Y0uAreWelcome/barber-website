@@ -50,14 +50,12 @@ section#gallery h2 { text-align:center; font-size:2.5em; margin-bottom:20px; }
 .swiper { width:90%; max-width:1000px; height:400px; margin:0 auto 50px auto; }
 .swiper-slide img { width:100%; height:100%; object-fit:cover; border-radius:10px; }
 
-#map { width:100%; height:400px; margin-top:15px; border-radius:10px; }
-
 .contact-info { text-align:center; }
-.contact-info a { color:gold; text-decoration:underline; }
+.contact-info p { margin:10px 0; }
 
 form { margin-top:20px; text-align:center; }
 form input { padding:10px; border-radius:5px; border:none; }
-form button { padding:10px 20px; background:gold; border:none; font-weight:bold; }
+form button { padding:10px 20px; background:gold; border:none; font-weight:bold; cursor:pointer; }
 
 @media(max-width:768px){
 .hero h1 { font-size:2.5em; }
@@ -67,15 +65,14 @@ form button { padding:10px 20px; background:gold; border:none; font-weight:bold;
 </style>
 
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
 </head>
+
 <body>
 
 <nav>
 <a href="#home">Home</a>
 <a href="portfolio.html">Portfolio</a>
 <a href="#contact">Contact</a>
-<a href="about.html">About</a>
 </nav>
 
 <section class="hero" id="home">
@@ -103,18 +100,8 @@ form button { padding:10px 20px; background:gold; border:none; font-weight:bold;
 <section id="contact">
 <h2 style="text-align:center;">Contact</h2>
 <div class="contact-info">
-
 <p>Email: hello@squareslash.com</p>
 <p>Phone: (000) 000-0000</p>
-
-<p>
-<a href="https://maps.google.com/?q=37.531906,-122.262421" target="_blank">
-Squareslash  
-275 Shoreline Dr #600, Redwood City, CA 94065
-</a>
-</p>
-
-<div id="map"></div>
 
 <p style="margin-top:20px;">Subscribe for news, promos, and deals:</p>
 
@@ -122,7 +109,6 @@ Squareslash
 <input type="email" placeholder="Enter your email" required>
 <button type="submit">Subscribe</button>
 </form>
-
 </div>
 </section>
 
@@ -133,26 +119,6 @@ autoplay:{delay:3000},
 pagination:{el:'.swiper-pagination', clickable:true},
 navigation:{nextEl:'.swiper-button-next', prevEl:'.swiper-button-prev'}
 });
-
-function initMap() {
-const location = { lat: 37.531906, lng: -122.262421 };
-
-const map = new google.maps.Map(document.getElementById("map"), {
-zoom: 17,
-center: location,
-mapTypeId: "roadmap"
-});
-
-const marker = new google.maps.Marker({
-position: location,
-map: map,
-title: "Squareslash"
-});
-}
-</script>
-
-<script async defer
-src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE&callback=initMap">
 </script>
 
 </body>

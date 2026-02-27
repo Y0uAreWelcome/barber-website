@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sites For Sale</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Websites For Sale</h1>
+    <p>Ready-to-launch business websites</p>
+</header>
+
+<section class="sites-container">
+
+    <div class="site-card">
+        <h2>Barbershop Website</h2>
+        <p>Modern booking-ready barbershop site.</p>
+        <a href="https://yourbarbershop.homes" target="_blank">View Demo</a>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="site-card">
+        <h2>Cleaning Service Website</h2>
+        <p>Perfect for local cleaning businesses.</p>
+        <a href="#">View Demo</a>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="site-card">
+        <h2>Food Truck Website</h2>
+        <p>Mobile-friendly with menu section.</p>
+        <a href="#">View Demo</a>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="site-card">
+        <h2>Real Estate Landing Page</h2>
+        <p>Lead capture focused layout.</p>
+        <a href="#">View Demo</a>
+        <button>Buy Now</button>
+    </div>
+
+</section>
+
+</body>
+</html>

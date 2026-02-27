@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Precision Cuts Barber</title>
+<title>Squareslash | Website Design</title>
 
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
 
@@ -30,7 +30,7 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:url("https://images.unsplash.com/photo-1585747860715-2ba37e788b70") center/cover no-repeat;
+background:url("https://images.unsplash.com/photo-1498050108023-c5249f4df085") center/cover no-repeat;
 }
 .hero h1 { font-size:4em; margin-bottom:10px; }
 .hero p { font-size:1.5em; margin-bottom:20px; }
@@ -73,26 +73,26 @@ form button { padding:10px 20px; background:gold; border:none; font-weight:bold;
 
 <nav>
 <a href="#home">Home</a>
-<a href="#gallery">Gallery</a>
+<a href="#gallery">Portfolio</a>
 <a href="#contact">Contact</a>
-<a href="about.html">About Me</a>
+<a href="about.html">About</a>
 </nav>
 
 <section class="hero" id="home">
-<h1>Precision Cuts</h1>
-<p>Clean Fades. Sharp Lines. Premium Service.</p>
-<a class="button" href="https://calendly.com/sajeddazine" target="_blank">Book Appointment</a>
+<h1>Squareslash</h1>
+<p>We Build Websites That Grow Your Business</p>
+<a class="button" href="https://calendly.com/sajeddazine" target="_blank">Book Consultation</a>
 </section>
 
 <section id="gallery">
-<h2>Gallery</h2>
+<h2>Our Work</h2>
 <div class="swiper">
 <div class="swiper-wrapper">
-<div class="swiper-slide"><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a"></div>
-<div class="swiper-slide"><img src="https://images.unsplash.com/photo-1621607512022-6aecc4fed814"></div>
-<div class="swiper-slide"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438"></div>
-<div class="swiper-slide"><img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e"></div>
-<div class="swiper-slide"><img src="https://images.unsplash.com/photo-1596912101241-67f2e2d0fce2"></div>
+<div class="swiper-slide"><img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb"></div>
+<div class="swiper-slide"><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0"></div>
+<div class="swiper-slide"><img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d"></div>
+<div class="swiper-slide"><img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a"></div>
+<div class="swiper-slide"><img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c"></div>
 </div>
 <div class="swiper-button-next"></div>
 <div class="swiper-button-prev"></div>
@@ -104,13 +104,13 @@ form button { padding:10px 20px; background:gold; border:none; font-weight:bold;
 <h2 style="text-align:center;">Contact</h2>
 <div class="contact-info">
 
-<p>Email: your@email.com</p>
-<p>Phone: (123) 456-7890</p>
+<p>Email: hello@squareslash.com</p>
+<p>Phone: (000) 000-0000</p>
 
 <p>
-<a href="https://maps.google.com/?q=37.90176,-122.061923" target="_blank">
-Figurati Barber Studio  
-1528 N Main St UNIT 104, Walnut Creek, CA
+<a href="https://maps.google.com/?q=37.531906,-122.262421" target="_blank">
+Squareslash  
+275 Shoreline Dr #600, Redwood City, CA 94065
 </a>
 </p>
 
@@ -135,10 +135,10 @@ navigation:{nextEl:'.swiper-button-next', prevEl:'.swiper-button-prev'}
 });
 
 function initMap() {
-const location = { lat: 37.90176, lng: -122.061923 };
+const location = { lat: 37.531906, lng: -122.262421 };
 
 const map = new google.maps.Map(document.getElementById("map"), {
-zoom: 18,
+zoom: 17,
 center: location,
 mapTypeId: "roadmap"
 });
@@ -146,14 +146,13 @@ mapTypeId: "roadmap"
 const marker = new google.maps.Marker({
 position: location,
 map: map,
-title: "Figurati Barber Studio"
+title: "Squareslash"
 });
 }
 </script>
 
-<!-- REPLACE WITH YOUR API KEY -->
 <script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6amfkc6AaS9xUrrIgKqP1-w3Rw13pdyA&callback=initMap">
+src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE&callback=initMap">
 </script>
 
 </body>

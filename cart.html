@@ -30,16 +30,41 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let container = document.getElementById("cart-items");
 let total = 0;
 
-cart.forEach(item => {
-container.innerHTML += `<div class="item">${item.name} - $${item.price}</div>`;
-total += item.price;
-});
+function renderCart() {
+  container.innerHTML = "";
+  total = 0;
 
-document.getElementById("total").innerText = "Total: $" + total;
+  if(cart.length === 0){
+    container.innerHTML = "<p>Your cart is empty</p>";
+    document.getElementById("total").innerText = "";
+    return;
+  }
+
+  cart.forEach((item, index) => {
+    container.innerHTML += `
+      <div class="item">
+        ${item.name} - $${item.price}
+        <br><br>
+        <button onclick="removeItem(${index})">Remove</button>
+      </div>
+    `;
+    total += item.price;
+  });
+
+  document.getElementById("total").innerText = "Total: $" + total;
+}
+
+function removeItem(index){
+  cart.splice(index, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  renderCart();
+}
 
 function checkout(){
-window.location.href="checkout.html";
+  window.location.href = "checkout.html";
 }
+
+renderCart();
 </script>
 
 </body>
